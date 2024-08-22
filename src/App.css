@@ -1,0 +1,203 @@
+/* ====== Global Styles ====== */
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* ====== Navbar ====== */
+
+nav {
+  background-color: #202020;
+  color: white;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.navLogo {
+  width: auto;
+  height: 50px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  margin: 0 10px;
+  position: relative;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 14px 20px;
+  display: block;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li a.active {
+  border-bottom: 2px solid white;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 14px 20px;
+  color: white;
+  margin-right: 20px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.menu-toggle:hover {
+  animation: pulse 1s infinite;
+}
+
+/* ====== Keyframes ====== */
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* ====== Content Area ====== */
+
+.content {
+  margin-top: 70px;
+  background-color: #ebebeb;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding: 30px;
+}
+
+/* ====== Footer ====== */
+
+.footer {
+  background-color: #202020;
+  color: #fff;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #00aced;
+}
+
+.footer p {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+/* ====== Media Queries ====== */
+
+@media (max-width: 768px) {
+  nav {
+    justify-content: space-between;
+  }
+
+  .logo-container {
+    flex: 1;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    display: none;
+    width: 100%;
+    background-color: #202020;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    padding: 0;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    width: 100%;
+    margin: 0;
+  }
+
+  nav ul li a {
+    width: 100%;
+    padding: 14px 20px;
+    box-sizing: border-box;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  nav {
+    justify-content: center;
+  }
+}
